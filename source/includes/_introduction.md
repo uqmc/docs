@@ -10,7 +10,7 @@ For information on how to use club website(s), go to the '[Executive Usage](http
 
 ## Editing this documentation
 
-This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the index file it defines which other markdown files are included. These other files are located in `source/includes` and are appended to the main markdown file in the same order they are defined in, in the 'includes' array within the front-matter.
+This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the 'includes' array. These includable files are located in `source/includes` and are appended to the main markdown file in the same order they are defined enumerated.
 
 The [Slate wiki](https://github.com/slatedocs/slate/wiki) has heaps of resources on how to customise the documentation.
 
