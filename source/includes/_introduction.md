@@ -15,13 +15,15 @@ This documentation's source code is found in the [uqmc/docs](https://github.com/
 The [Slate wiki](https://github.com/slatedocs/slate/wiki) has heaps of resources on how to customise the documentation.
 
 > Installing doc deployment dependencies
-```shell
+
+```bash
 $ gem install bundler
 $ bundle install
 ```
 
 > Deploying docs
-```shell
+
+```bash
 $ bash ./deploy.sh
 ```
 
