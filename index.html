@@ -315,7 +315,7 @@
                     <a href="#editing-this-documentation" class="toc-h2 toc-link" data-title="Editing this documentation">Editing this documentation</a>
                   </li>
                   <li>
-                    <a href="#who-to-talk-to" class="toc-h2 toc-link" data-title="Who to talk to">Who to talk to</a>
+                    <a href="#who-to-talk-to-about-club-tech" class="toc-h2 toc-link" data-title="Who to talk to about club tech">Who to talk to about club tech</a>
                   </li>
               </ul>
           </li>
@@ -339,9 +339,28 @@
 <li>Exec Portal <a href="https://admin.uqmc.org/">https://exec.uqmc.org/</a> (COMING SOON)</li>
 <li>Documentation <a href="https://uqmc.github.io/docs/">https://uqmc.github.io/docs/</a></li>
 </ul>
+
+<p>For information on how to use club website(s), go to the &#39;<a href="https://uqmc.github.io/docs/#executive-usage">Executive Usage</a>&#39; section.</p>
 <h2 id='editing-this-documentation'>Editing this documentation</h2>
-<p><em>Guide on updating these docs.</em></p>
-<h2 id='who-to-talk-to'>Who to talk to</h2>
+<p>This documentation&#39;s source code is found in the <a href="https://github.com/uqmc/docs/">uqmc/docs</a> repository. The repository is a fork of <a href="https://github.com/slatedocs/slate/">Slate</a>. To edit its content, simply clone our &#39;docs&#39; repository and edit the markdown files under <code>source/</code>. The <code>index.html.md</code> file includes the front-matter for the markdown. Within the index file it defines which other markdown files are included. These other files are located in <code>source/includes</code> and are appended to the main markdown file in the same order they are defined in, in the &#39;includes&#39; array within the front-matter.</p>
+
+<p>The <a href="https://github.com/slatedocs/slate/wiki">Slate wiki</a> has heaps of resources on how to customise the documentation.</p>
+
+<blockquote>
+<p>Installing doc deployment dependencies
+<code>shell
+$ gem install bundler
+$ bundle install
+</code></p>
+
+<p>Deploying docs
+<code>shell
+$ bash ./deploy.sh
+</code></p>
+</blockquote>
+
+<p>In order to deploy your changes to production, simply run the commands on the right. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
+<h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
 <p><em>Details about who to talk to for help with website, accounts, payment stuff.</em></p>
 <h1 id='api-http-codes'>API HTTP Codes</h1>
 <p>The UQMC Arapiles API uses the following error codes.</p>
