@@ -298,7 +298,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-d87d8c85.png" class="logo" alt="" />
+      <img src="images/logo-6fffbf3e.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
@@ -314,13 +314,15 @@
                   <li>
                     <a href="#editing-this-documentation" class="toc-h2 toc-link" data-title="Editing this documentation">Editing this documentation</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#executive-usage" class="toc-h1 toc-link" data-title="Executive Usage">Executive Usage</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#who-to-talk-to-about-club-tech" class="toc-h2 toc-link" data-title="Who to talk to about club tech">Who to talk to about club tech</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#api-http-codes" class="toc-h1 toc-link" data-title="API HTTP Codes">API HTTP Codes</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -336,24 +338,38 @@
 
 <ul>
 <li>Website <a href="https://uqmc.org/">https://uqmc.org/</a> (COMING SOON)</li>
-<li>Exec Portal <a href="https://admin.uqmc.org/">https://exec.uqmc.org/</a> (COMING SOON)</li>
+<li>Exec Portal <a href="https://exec.uqmc.org/">https://exec.uqmc.org/</a> (COMING SOON)</li>
 <li>Documentation <a href="https://uqmc.github.io/docs/">https://uqmc.github.io/docs/</a></li>
 </ul>
 
-<p>For information on how to use club website(s), go to the &#39;<a href="https://uqmc.github.io/docs/#executive-usage">Executive Usage</a>&#39; section.</p>
+<p>For information on how to use club website(s), go to the &#39;<a href="#executive-usage">Executive Usage</a>&#39; section.</p>
 <h2 id='editing-this-documentation'>Editing this documentation</h2>
-<p>This documentation&#39;s source code is found in the <a href="https://github.com/uqmc/docs/">uqmc/docs</a> repository. The repository is a fork of <a href="https://github.com/slatedocs/slate/">Slate</a>. To edit its content, simply clone our &#39;docs&#39; repository and edit the markdown files under <code>source/</code>. The <code>index.html.md</code> file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the &#39;includes&#39; array. These includable files are located in <code>source/includes</code> and are appended to the main markdown file in the same order they are defined enumerated.</p>
-
-<p>The <a href="https://github.com/slatedocs/slate/wiki">Slate wiki</a> has heaps of resources on how to customise the documentation.</p>
-
 <blockquote>
-<p>Installing doc deployment dependencies</p>
+<p>Installing doc dependencies</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>gem <span class="nb">install </span>bundler
 <span class="nv">$ </span>bundle <span class="nb">install</span>
 </code></pre></div>
+<p>This documentation&#39;s source code is found in the <a href="https://github.com/uqmc/docs/">uqmc/docs</a> repository. The repository is a fork of <a href="https://github.com/slatedocs/slate/">Slate</a>. To edit its content, simply clone our &#39;docs&#39; repository and edit the markdown files under <code>source/</code>. The <code>index.html.md</code> file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the &#39;includes&#39; array. These includable files are located in <code>source/includes</code> and are appended to the main markdown file in the same order they are defined enumerated.</p>
+
+<p>There are also global variables defined at the bottom of <code>config.rb</code> which can be used within the markdown files. Items like domains subject to change and names of people should be defined here.</p>
+
+<p>The <a href="https://github.com/slatedocs/slate/wiki">Slate wiki</a> has heaps of resources on how to customise, run, and deploy the documentation.</p>
+
+<p>To recap, the main files/directories you need to edit are:<br>
+ - <code>source/index.html.md</code><br>
+ - <code>source/includes/</code><br>
+ - <code>config.rb</code></p>
+<h3 id='development'>Development</h3>
 <blockquote>
-<p>Deploying docs</p>
+<p>Running the docs locally</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>bundle <span class="nb">exec </span>middleman server
+</code></pre></div>
+<p>This will spin up a local server at <code>http://localhost:4567/</code> that will automatically update as you make changes to the documentation source.</p>
+<h3 id='production'>Production</h3>
+<blockquote>
+<p>Deploying docs to production</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>git add <span class="nb">.</span>
 <span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"Make changes"</span>
@@ -361,62 +377,8 @@
 <span class="nv">$ </span>bash ./deploy.sh
 </code></pre></div>
 <p>In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the <code>main</code> branch, then use the <code>deploy.sh</code> file to push changes over to the <code>gh-pages</code> branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
-<h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
-<p><em>Details about who to talk to for help with website, accounts, payment stuff.</em></p>
-<h1 id='api-http-codes'>API HTTP Codes</h1>
-<p>The UQMC Arapiles API uses the following error codes.</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+<h1 id='executive-usage'>Executive Usage</h1><h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
+<p>In order to report issues with or get help with club tech, have a chat with: Jarred Vardy, or Sam Jane.</p>
 
       </div>
       <div class="dark-box">
