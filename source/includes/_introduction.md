@@ -24,10 +24,13 @@ $ bundle install
 > Deploying docs
 
 ```bash
+$ git add .
+$ git commit -m "Make changes"
+$ git push
 $ bash ./deploy.sh
 ```
 
-In order to deploy your changes to production, simply run the commands on the right. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).
+In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the `main` branch, then use the `deploy.sh` file to push changes over to the `gh-pages` branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).
 
 ## Who to talk to about club tech
 
