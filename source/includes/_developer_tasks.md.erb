@@ -1,0 +1,45 @@
+# Tasks (Arapiles)
+
+```
+[x] Documentation deployment
+```
+
+Deploy Slate documentation through GitHub Pages.
+
+```
+[ ] Styling: page layout
+[ ] Styling: font
+[ ] Styling: nav bar
+[ ] Styling: sticky nav bar on scroll with JS
+```
+
+**Page layout**
+
+The layout of all pages should be as follows:
+
+ - Nav bar across top of screen. Contents of navbar are left and right justified, the left-most edge ~4em from left-edge of center content and right-most edge ~4em from right-edge of content.    
+ - Central content of a fixed width with whitespace on either side that expands and contracts as the viewport does. Once the viewport contracts to or less than the (fixed) size of the content, whitespace disappears and content space starts contracting.
+
+Example:
+
+![Layout example screenshot](task_layout.png)
+
+The layout CSS is defined in `src/front/src/layouts/primaryLayout.css` and is consumed by `primaryLayout.js`.
+
+The component `PrimaryLayout` acts as the parent layout for all pages. At the moment the index page and `Tape` templated pages inherit `PrimaryLayout` (see `src/front/src/templates/tape.js`).
+
+As it stands, a div with class `width-800px` has been added to fix the width of the content and `max-width` of `800px` has been applied to the `main` element. This is a hack to make it look okay for now. The problem is that this fixes the width at 800px even when the viewport is less than 800px wide.
+
+**Nav bar**
+
+The nav bar should be a component. It uses the UQMC logo which is left-justified and a hyperlink to the index page. Navigation to other pages is right-justified.
+
+A nav item called 'Tape Attainment' is a drop-down with links to all generated tape pages.
+
+A nav item called 'FAQ' is a link to the FAQ page.
+
+```
+[ ] Legal: licensing image assets in source
+```
+
+All assets (images, videos, etc.) used in the Arapiles project should be licensed with UQMC's exclusive copyright.
