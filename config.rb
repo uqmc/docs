@@ -61,3 +61,13 @@ set :port, 4567
 helpers do
   require './lib/toc_data.rb'
 end
+
+# Global Variables
+set :tech_helpers, 'Jarred Vardy, or Sam Jane'
+set :url_primary, 'https://uqmc.org/'
+set :url_exec_portal, 'https://exec.uqmc.org/'
+set :url_docs, 'https://uqmc.github.io/docs/'
+config[:tech_helpers]
+config[:url_primary]
+config[:url_exec_portal]
+config[:url_docs]

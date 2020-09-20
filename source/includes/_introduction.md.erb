@@ -2,26 +2,45 @@
 
 This is where the documentation for all of the digital processes used by UQMC lives.
 
- - Website [https://uqmc.org/](https://uqmc.org/) (COMING SOON)
- - Exec Portal [https://exec.uqmc.org/](https://admin.uqmc.org/) (COMING SOON)
- - Documentation [https://uqmc.github.io/docs/](https://uqmc.github.io/docs/)
+ - Website [<%= config[:url_primary] %>](<%= config[:url_primary] %>) (COMING SOON)
+ - Exec Portal [<%= config[:url_exec_portal] %>](<%= config[:url_exec_portal] %>) (COMING SOON)
+ - Documentation [<%= config[:url_docs] %>](<%= config[:url_docs] %>)
 
-For information on how to use club website(s), go to the '[Executive Usage](https://uqmc.github.io/docs/#executive-usage)' section.
+For information on how to use club website(s), go to the '[Executive Usage](#executive-usage)' section.
 
 ## Editing this documentation
 
-This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the 'includes' array. These includable files are located in `source/includes` and are appended to the main markdown file in the same order they are defined enumerated.
-
-The [Slate wiki](https://github.com/slatedocs/slate/wiki) has heaps of resources on how to customise the documentation.
-
-> Installing doc deployment dependencies
+> Installing doc dependencies
 
 ```bash
 $ gem install bundler
 $ bundle install
 ```
 
-> Deploying docs
+This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the 'includes' array. These includable files are located in `source/includes` and are appended to the main markdown file in the same order they are defined enumerated.
+
+There are also global variables defined at the bottom of `config.rb` which can be used within the markdown files. Items like domains subject to change and names of people should be defined here.
+
+The [Slate wiki](https://github.com/slatedocs/slate/wiki) has heaps of resources on how to customise, run, and deploy the documentation.
+
+To recap, the main files/directories you need to edit are:    
+ - `source/index.html.md`    
+ - `source/includes/`    
+ - `config.rb`
+
+### Development
+
+> Running the docs locally
+
+```bash
+$ bundle exec middleman server
+```
+
+This will spin up a local server at `http://localhost:4567/` that will automatically update as you make changes to the documentation source.
+
+### Production
+
+> Deploying docs to production
 
 ```bash
 $ git add .
@@ -31,7 +50,3 @@ $ bash ./deploy.sh
 ```
 
 In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the `main` branch, then use the `deploy.sh` file to push changes over to the `gh-pages` branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).
-
-## Who to talk to about club tech
-
-_Details about who to talk to for help with website, accounts, payment stuff._

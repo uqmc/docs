@@ -11,7 +11,16 @@ toc_footers:
 
 includes:
   - introduction
-  - errors
+  - execs_usage
+  - developer_tasks
+  - dns_and_deployment_services
+  - style
+  - arapiles
+  - injury
+  - dirtbag
+  - strapi_cms_dns
+  - security
+  - licensing
 
 search: true
 
