@@ -324,6 +324,9 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#tasks-arapiles" class="toc-h1 toc-link" data-title="Tasks (Arapiles)">Tasks (Arapiles)</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://uqmc.org/'>uqmc.org</a></li>
@@ -356,10 +359,13 @@
 
 <p>The <a href="https://github.com/slatedocs/slate/wiki">Slate wiki</a> has heaps of resources on how to customise, run, and deploy the documentation.</p>
 
-<p>To recap, the main files/directories you need to edit are:<br>
- - <code>source/index.html.md</code><br>
- - <code>source/includes/</code><br>
- - <code>config.rb</code></p>
+<p>To recap, the main files/directories you need to edit are:</p>
+
+<ul>
+<li><code>source/index.html.md</code><br></li>
+<li><code>source/includes/</code><br></li>
+<li><code>config.rb</code></li>
+</ul>
 <h3 id='development'>Development</h3>
 <blockquote>
 <p>Running the docs locally</p>
@@ -379,6 +385,43 @@
 <p>In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the <code>main</code> branch, then use the <code>deploy.sh</code> file to push changes over to the <code>gh-pages</code> branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
 <h1 id='executive-usage'>Executive Usage</h1><h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
 <p>In order to report issues with or get help with club tech, have a chat with: Jarred Vardy, or Sam Jane.</p>
+<h1 id='tasks-arapiles'>Tasks (Arapiles)</h1><div class="highlight"><pre class="highlight plaintext"><code>[x] Documentation deployment
+</code></pre></div>
+<p>Deploy Slate documentation through GitHub Pages.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[ ] Styling: page layout
+[ ] Styling: font
+[ ] Styling: nav bar
+[ ] Styling: sticky nav bar on scroll with JS
+</code></pre></div>
+<p><strong>Page layout</strong></p>
+
+<p>The layout of all pages should be as follows:</p>
+
+<ul>
+<li>Nav bar across top of screen. Contents of navbar are left and right justified, the left-most edge ~4em from left-edge of center content and right-most edge ~4em from right-edge of content.<br></li>
+<li>Central content of a fixed width with whitespace on either side that expands and contracts as the viewport does. Once the viewport contracts to or less than the (fixed) size of the content, whitespace disappears and content space starts contracting.</li>
+</ul>
+
+<p>Example:</p>
+
+<p><img src="images/task_layout-189d43e1.png" alt="Layout example screenshot" /></p>
+
+<p>The layout CSS is defined in <code>src/front/src/layouts/primaryLayout.css</code> and is consumed by <code>primaryLayout.js</code>.</p>
+
+<p>The component <code>PrimaryLayout</code> acts as the parent layout for all pages. At the moment the index page and <code>Tape</code> templated pages inherit <code>PrimaryLayout</code> (see <code>src/front/src/templates/tape.js</code>).</p>
+
+<p>As it stands, a div with class <code>width-800px</code> has been added to fix the width of the content and <code>max-width</code> of <code>800px</code> has been applied to the <code>main</code> element. This is a hack to make it look okay for now. The problem is that this fixes the width at 800px even when the viewport is less than 800px wide.</p>
+
+<p><strong>Nav bar</strong></p>
+
+<p>The nav bar should be a component. It uses the UQMC logo which is left-justified and a hyperlink to the index page. Navigation to other pages is right-justified.</p>
+
+<p>A nav item called &#39;Tape Attainment&#39; is a drop-down with links to all generated tape pages.</p>
+
+<p>A nav item called &#39;FAQ&#39; is a link to the FAQ page.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[ ] Legal: licensing image assets in source
+</code></pre></div>
+<p>All assets (images, videos, etc.) used in the Arapiles project should be licensed with UQMC&#39;s exclusive copyright.</p>
 
       </div>
       <div class="dark-box">
