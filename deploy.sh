@@ -158,6 +158,11 @@ incremental_deploy() {
       return $diff
       ;;
   esac
+
+  echo "docs.uqmc.org" > CNAME
+  git add CNAME
+  git commit -m "Add CNAME file"
+  git push $repo $deploy_branch
 }
 
 commit+push() {
