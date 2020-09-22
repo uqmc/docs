@@ -2,7 +2,6 @@
 title: UQMC Digital Documentation
 
 language_tabs: # Must be one of https://git.io/vQNgJ
-  - shell
   - python
 
 toc_footers:
