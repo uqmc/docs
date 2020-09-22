@@ -1,44 +1,37 @@
 # Tasks (Arapiles)
 
 ```
-[x] Documentation deployment
+[ ] Copy: proof-read body text
 ```
 
-**Documentation deployment**
+**Body text**
 
-Deploy Slate documentation through GitHub Pages.
+Import copy that execs provide. Proof-read and type nicely.
 
 ```
-[ ] Styling: page layout
-[ ] Styling: font
-[ ] Styling: nav bar
+[x] Deploy: documentation
+[ ] Deploy: Arapiles
+```
+
+**Arapiles deployment**
+
+Arapiles needs to be deployed to a VPS, tested, and then the A name records for the uqmc.org DNS needs to point to the VPS IP.
+
+```
+[x] Styling: page layout
+[ ] Styling: page layout with Ant.Design grid
+[x] Styling: font
+[x] Styling: nav bar
 [ ] Styling: sticky nav bar on scroll with JS
 ```
 
-**Page layout**
+**Layout with grid**
 
-The layout of all pages should be as follows:
+Using [Ant Design's grid](https://ant.design/components/grid/) layout we need to achieve the same layout as we currently have. It should be mobile-responsive.
 
- - Nav bar across top of screen. Contents of navbar are left and right justified, the left-most edge ~4em from left-edge of center content and right-most edge ~4em from right-edge of content.    
- - Central content of a fixed width with whitespace on either side that expands and contracts as the viewport does. Once the viewport contracts to or less than the (fixed) size of the content, whitespace disappears and content space starts contracting.
+**Sticky nav bar**
 
-Example:
-
-![Layout example screenshot](task_layout.png)
-
-The layout CSS is defined in `src/front/src/layouts/primaryLayout.css` and is consumed by `primaryLayout.js`.
-
-The component `PrimaryLayout` acts as the parent layout for all pages. At the moment the index page and `Tape` templated pages inherit `PrimaryLayout` (see `src/front/src/templates/tape.js`).
-
-As it stands, a div with class `width-800px` has been added to fix the width of the content and `max-width` of `800px` has been applied to the `main` element. This is a hack to make it look okay for now. The problem is that this fixes the width at 800px even when the viewport is less than 800px wide.
-
-**Nav bar**
-
-The nav bar should be a component. It uses the UQMC logo which is left-justified and a hyperlink to the index page. Navigation to other pages is right-justified.
-
-A nav item called 'Tape Attainment' is a drop-down with links to all generated tape pages.
-
-A nav item called 'FAQ' is a link to the FAQ page.
+When the viewport scrolls past the navbar, a new, smaller bar should appear and be sticky to the top of the viewport. It should appear with a subtle animation. To do this, a simple JS script will suffice.
 
 ```
 [ ] Legal: licensing image assets in source

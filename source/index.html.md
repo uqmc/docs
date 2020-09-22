@@ -12,15 +12,9 @@ toc_footers:
 includes:
   - introduction
   - execs_usage
+  - projects
   - developer_tasks
-  - dns_and_deployment_services
-  - style
-  - arapiles
-  - injury
-  - dirtbag
-  - strapi_cms_dns
-  - security
-  - licensing
+  - docs_arapiles
 
 search: true
 
