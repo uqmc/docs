@@ -322,10 +322,36 @@
                   <li>
                     <a href="#who-to-talk-to-about-club-tech" class="toc-h2 toc-link" data-title="Who to talk to about club tech">Who to talk to about club tech</a>
                   </li>
+                  <li>
+                    <a href="#how-to-sign-off-tapes" class="toc-h2 toc-link" data-title="How to sign off tapes">How to sign off tapes</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-add-events" class="toc-h2 toc-link" data-title="How to add events">How to add events</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-add-blog-posts" class="toc-h2 toc-link" data-title="How to add blog posts">How to add blog posts</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-edit-users-39-details" class="toc-h2 toc-link" data-title="How to edit users' details">How to edit users' details</a>
+                  </li>
+                  <li>
+                    <a href="#how-to-send-emails" class="toc-h2 toc-link" data-title="How to send emails">How to send emails</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#primary-website-codename-arapiles" class="toc-h2 toc-link" data-title="Primary website (codename: Arapiles)">Primary website (codename: Arapiles)</a>
+                  </li>
               </ul>
           </li>
           <li>
             <a href="#tasks-arapiles" class="toc-h1 toc-link" data-title="Tasks (Arapiles)">Tasks (Arapiles)</a>
+          </li>
+          <li>
+            <a href="#arapiles" class="toc-h1 toc-link" data-title="Arapiles">Arapiles</a>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -385,47 +411,52 @@
 <p>In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the <code>main</code> branch, then use the <code>deploy.sh</code> file to push changes over to the <code>gh-pages</code> branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
 <h1 id='executive-usage'>Executive Usage</h1><h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
 <p>In order to report issues with or get help with club tech, have a chat with: Jarred Vardy, or Sam Jane.</p>
-<h1 id='tasks-arapiles'>Tasks (Arapiles)</h1><div class="highlight"><pre class="highlight plaintext"><code>[x] Documentation deployment
-</code></pre></div>
-<p><strong>Documentation deployment</strong></p>
+<h2 id='how-to-sign-off-tapes'>How to sign off tapes</h2>
+<p><em>Coming soon</em></p>
+<h2 id='how-to-add-events'>How to add events</h2>
+<p><em>Coming soon</em></p>
+<h2 id='how-to-add-blog-posts'>How to add blog posts</h2>
+<p><em>Coming soon</em></p>
+<h2 id='how-to-edit-users-39-details'>How to edit users&#39; details</h2>
+<p><em>Coming soon</em></p>
+<h2 id='how-to-send-emails'>How to send emails</h2><h1 id='projects'>Projects</h1><h2 id='primary-website-codename-arapiles'>Primary website (codename: Arapiles)</h2>
+<p>Arapiles is the primary website at <code>uqmc.org</code>. Its purpose is to provide content, display copy, and update users on the goings-on for the club.</p>
 
-<p>Deploy Slate documentation through GitHub Pages.</p>
-<div class="highlight"><pre class="highlight plaintext"><code>[ ] Styling: page layout
-[ ] Styling: font
-[ ] Styling: nav bar
+<p>Users are also expected to go here in order to learn about the requirements to obtain <em>tapes</em>.</p>
+
+<p><a href="#arapiles">Arapiles docs</a><br>
+<a href="#tasks-arapiles">Arapiles tasks</a></p>
+<h1 id='tasks-arapiles'>Tasks (Arapiles)</h1><div class="highlight"><pre class="highlight plaintext"><code>[ ] Copy: proof-read body text
+</code></pre></div>
+<p><strong>Body text</strong></p>
+
+<p>Import copy that execs provide. Proof-read and type nicely.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[x] Deploy: documentation
+[ ] Deploy: Arapiles
+</code></pre></div>
+<p><strong>Arapiles deployment</strong></p>
+
+<p>Arapiles needs to be deployed to a VPS, tested, and then the A name records for the uqmc.org DNS needs to point to the VPS IP.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>[x] Styling: page layout
+[ ] Styling: page layout with Ant.Design grid
+[x] Styling: font
+[x] Styling: nav bar
 [ ] Styling: sticky nav bar on scroll with JS
 </code></pre></div>
-<p><strong>Page layout</strong></p>
+<p><strong>Layout with grid</strong></p>
 
-<p>The layout of all pages should be as follows:</p>
+<p>Using <a href="https://ant.design/components/grid/">Ant Design&#39;s grid</a> layout we need to achieve the same layout as we currently have. It should be mobile-responsive.</p>
 
-<ul>
-<li>Nav bar across top of screen. Contents of navbar are left and right justified, the left-most edge ~4em from left-edge of center content and right-most edge ~4em from right-edge of content.<br></li>
-<li>Central content of a fixed width with whitespace on either side that expands and contracts as the viewport does. Once the viewport contracts to or less than the (fixed) size of the content, whitespace disappears and content space starts contracting.</li>
-</ul>
+<p><strong>Sticky nav bar</strong></p>
 
-<p>Example:</p>
-
-<p><img src="images/task_layout-189d43e1.png" alt="Layout example screenshot" /></p>
-
-<p>The layout CSS is defined in <code>src/front/src/layouts/primaryLayout.css</code> and is consumed by <code>primaryLayout.js</code>.</p>
-
-<p>The component <code>PrimaryLayout</code> acts as the parent layout for all pages. At the moment the index page and <code>Tape</code> templated pages inherit <code>PrimaryLayout</code> (see <code>src/front/src/templates/tape.js</code>).</p>
-
-<p>As it stands, a div with class <code>width-800px</code> has been added to fix the width of the content and <code>max-width</code> of <code>800px</code> has been applied to the <code>main</code> element. This is a hack to make it look okay for now. The problem is that this fixes the width at 800px even when the viewport is less than 800px wide.</p>
-
-<p><strong>Nav bar</strong></p>
-
-<p>The nav bar should be a component. It uses the UQMC logo which is left-justified and a hyperlink to the index page. Navigation to other pages is right-justified.</p>
-
-<p>A nav item called &#39;Tape Attainment&#39; is a drop-down with links to all generated tape pages.</p>
-
-<p>A nav item called &#39;FAQ&#39; is a link to the FAQ page.</p>
+<p>When the viewport scrolls past the navbar, a new, smaller bar should appear and be sticky to the top of the viewport. It should appear with a subtle animation. To do this, a simple JS script will suffice.</p>
 <div class="highlight"><pre class="highlight plaintext"><code>[ ] Legal: licensing image assets in source
 </code></pre></div>
 <p><strong>Asset licensing</strong></p>
 
 <p>All assets (images, videos, etc.) used in the Arapiles project should be licensed with UQMC&#39;s exclusive copyright.</p>
+<h1 id='arapiles'>Arapiles</h1>
+<p><em>Documentation coming soon</em></p>
 
       </div>
       <div class="dark-box">
