@@ -69,5 +69,5 @@ set :url_primary, 'https://uqmc.org/'
 config[:url_primary]
 set :url_membership, 'https://members.uqmc.org/'
 config[:url_membership]
-set :url_docs_, 'https://docs.uqmc.org/'
-config[:url_docs_]
+set :url_docs, 'https://docs.uqmc.org/'
+config[:url_docs]
