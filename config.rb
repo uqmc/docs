@@ -64,10 +64,10 @@ end
 
 # Global Variables
 set :tech_helpers, 'Jarred Vardy, or Sam Jane'
-set :url_primary, 'https://uqmc.org/'
-set :url_exec_portal, 'https://exec.uqmc.org/'
-set :url_docs, 'https://uqmc.github.io/docs/'
 config[:tech_helpers]
+set :url_primary, 'https://uqmc.org/'
 config[:url_primary]
-config[:url_exec_portal]
+set :url_membership, 'https://members.uqmc.org/'
+config[:url_membership]
+set :url_docs, 'https://uqmc.github.io/docs/'
 config[:url_docs]
