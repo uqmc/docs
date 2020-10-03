@@ -12,8 +12,12 @@ includes:
   - introduction
   - execs_usage
   - projects
-  - developer_tasks
-  - docs_arapiles
+  - contributing
+  - style
+  - arapiles
+  - girraween
+  - grampians
+  - kp
 
 search: true
 

@@ -67,6 +67,8 @@ set :tech_helpers, 'Jarred Vardy, or Sam Jane'
 config[:tech_helpers]
 set :url_primary, 'https://uqmc.org/'
 config[:url_primary]
+set :url_cms, 'https://cms.uqmc.org/admin/'
+config[:url_cms]
 set :url_membership, 'https://members.uqmc.org/'
 config[:url_membership]
 set :url_docs, 'https://docs.uqmc.org/'
