@@ -409,13 +409,13 @@
               </ul>
           </li>
           <li>
-            <a href="#kp" class="toc-h1 toc-link" data-title="KP">KP</a>
+            <a href="#tibrogargan" class="toc-h1 toc-link" data-title="Tibrogargan">Tibrogargan</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#kp-tasks" class="toc-h2 toc-link" data-title="KP tasks">KP tasks</a>
+                    <a href="#tibrogargan-tasks" class="toc-h2 toc-link" data-title="Tibrogargan tasks">Tibrogargan tasks</a>
                   </li>
                   <li>
-                    <a href="#kp-documentation" class="toc-h2 toc-link" data-title="KP documentation">KP documentation</a>
+                    <a href="#tibrogargan-documentation" class="toc-h2 toc-link" data-title="Tibrogargan documentation">Tibrogargan documentation</a>
                   </li>
               </ul>
           </li>
@@ -610,9 +610,89 @@
 [ ] Deployment: figure out how to introduce plugins into Strapi deployment
 </code></pre></div><h2 id='grampians-documentation'>Grampians documentation</h2>
 <p><em>Documentation coming soon.</em></p>
-<h1 id='kp'>KP</h1><h2 id='kp-tasks'>KP tasks</h2><div class="highlight"><pre class="highlight plaintext"><code>[ ] Meta: start project
-</code></pre></div><h2 id='kp-documentation'>KP documentation</h2>
-<p><em>Documentation coming soon.</em></p>
+<h1 id='tibrogargan'>Tibrogargan</h1><h2 id='tibrogargan-tasks'>Tibrogargan tasks</h2><div class="highlight"><pre class="highlight plaintext"><code>[ ] Meta: start project
+</code></pre></div><h2 id='tibrogargan-documentation'>Tibrogargan documentation</h2><h3 id='resources'>Resources</h3>
+<p>Forecast data is sourced from the Australian Bureau of Meteorology (BOM) using <a href="https://github.com/tonyallan">Tony Allan&#39;s</a> reverse-engineered BOM API library [weather-au])(https://github.com/tonyallan/weather-au). The BOM API is the least-documented pile of shit on the planet so Tony&#39;s doing God&#39;s work.</p>
+
+<p>The API uses geohashes to specify a location within Australia to weather grab data for. Any geohash will work as long as it&#39;s within Australia&#39;s geographical region. The API will use fancy aggregated data from nearby weather stations.</p>
+
+<p>You can obtain the geohash for a location using 3rd party websites, coordinate conversion or by simply using the BOM API&#39;s search functionality.</p>
+
+<ul>
+<li>Search endpoint:<br>
+<a href="https://api.weather.bom.gov.au/v1/locations?search=kangaroo+point">https://api.weather.bom.gov.au/v1/locations?search=kangaroo+point</a></li>
+<li>Search GUI (obtain geohash from URL bar):<br>
+<a href="https://weather.bom.gov.au/search">https://weather.bom.gov.au/search</a></li>
+<li>7-day forecast endpoint:<br>
+<a href="https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily">https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily</a></li>
+</ul>
+
+<p>The search query finds any locations matching <code>kangaroo point</code>. The 7-day forecast is for the geohash <code>r7hgdqt</code>, obtained from the search.</p>
+
+<ul>
+<li>Geohashes:<br>
+<a href="https://en.wikipedia.org/wiki/Geohash">https://en.wikipedia.org/wiki/Geohash</a></li>
+<li>API library:<br>
+<a href="https://github.com/tonyallan/weather-au">https://github.com/tonyallan/weather-au</a></li>
+<li>PyPi package:<br>
+<a href="https://pypi.org/project/weather-au/">https://pypi.org/project/weather-au/</a></li>
+<li>Weather station map:<br>
+<a href="http://www.bom.gov.au/qld/observations/map.shtml">http://www.bom.gov.au/qld/observations/map.shtml</a></li>
+<li>BOM historical data observations:<br>
+<a href="http://www.bom.gov.au/catalogue/data-feeds.shtml">http://www.bom.gov.au/catalogue/data-feeds.shtml</a></li>
+</ul>
+<h3 id='endpoints'>Endpoints</h3>
+<blockquote>
+<p>GET /api/forecast/:location_geohash</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r7hgdqt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"response_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-06T03:44:21Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"issue_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-06T03:00:11.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"forecast_region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brisbane"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"forecast_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metropolitan"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mm"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"uv"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"veryhigh"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-06T05:10:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"max_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05T22:00:00Z"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05T14:00:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"temp_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"temp_min"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"extended_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Partly cloudy. Patchy fog in the west early this morning. Light winds."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"now"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>7-day forecast at location</strong></p>
+
+<p>Example BOM API query showing <code>data</code> object structure: <a href="https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily">https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily</a><br>
+The <code>data</code> array is in chronological order where the zeroth object is &#39;now&#39; and the final object is the future-most day we have a forecast for. The zeroth object is unique in that it has a <code>now</code> object containing (lackluster) present data.</p>
+
+<p>Less important elements redacted from example response.</p>
 
       </div>
       <div class="dark-box">
