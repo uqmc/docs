@@ -1,0 +1,93 @@
+# Tibrogargan
+
+## Tibrogargan tasks
+
+```
+[ ] Meta: start project
+```
+
+## Tibrogargan documentation
+
+### Resources
+
+Forecast data is sourced from the Australian Bureau of Meteorology (BOM) using [Tony Allan's](https://github.com/tonyallan) reverse-engineered BOM API library [weather-au])(https://github.com/tonyallan/weather-au). The BOM API is the least-documented pile of shit on the planet so Tony's doing God's work.
+
+The API uses geohashes to specify a location within Australia to weather grab data for. Any geohash will work as long as it's within Australia's geographical region. The API will use fancy aggregated data from nearby weather stations.
+
+You can obtain the geohash for a location using 3rd party websites, coordinate conversion or by simply using the BOM API's search functionality.
+
+ - Search endpoint:    
+ [https://api.weather.bom.gov.au/v1/locations?search=kangaroo+point](https://api.weather.bom.gov.au/v1/locations?search=kangaroo+point)
+ - Search GUI (obtain geohash from URL bar):    
+ [https://weather.bom.gov.au/search](https://weather.bom.gov.au/search)
+ - 7-day forecast endpoint:    
+ [https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily](https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily)
+
+The search query finds any locations matching `kangaroo point`. The 7-day forecast is for the geohash `r7hgdqt`, obtained from the search.
+
+ - Geohashes:    
+ [https://en.wikipedia.org/wiki/Geohash](https://en.wikipedia.org/wiki/Geohash)
+ - API library:    
+ [https://github.com/tonyallan/weather-au](https://github.com/tonyallan/weather-au)
+ - PyPi package:    
+ [https://pypi.org/project/weather-au/](https://pypi.org/project/weather-au/)
+ - Weather station map:    
+ [http://www.bom.gov.au/qld/observations/map.shtml](http://www.bom.gov.au/qld/observations/map.shtml)
+ - BOM historical data observations:    
+ [http://www.bom.gov.au/catalogue/data-feeds.shtml](http://www.bom.gov.au/catalogue/data-feeds.shtml)
+
+### Endpoints
+
+> GET /api/forecast/:location_geohash
+
+```json
+{
+
+}
+```
+
+> Example response
+
+```json
+{
+    "location": "r7hgdqt",
+    "metadata": {
+        "response_timestamp": "2020-10-06T03:44:21Z",
+        "issue_time": "2020-10-06T03:00:11.000Z",
+        "forecast_region": "Brisbane",
+        "forecast_type": "metropolitan"
+    },
+    "data": [
+        {
+            "rain": {
+                "amount": {
+                    "max": null,
+                    "min": 0,
+                    "units": "mm"
+                },
+                "chance": 10
+            },
+            "uv": {
+                "category": "veryhigh",
+                "end_time": "2020-10-06T05:10:00Z",
+                "max_index": 10,
+                "start_time": "2020-10-05T22:00:00Z"
+            },
+            "date": "2020-10-05T14:00:00Z",
+            "temp_max": 27,
+            "temp_min": 16,
+            "extended_text": "Partly cloudy. Patchy fog in the west early this morning. Light winds.",
+            "now": {...}
+            ...
+        },
+        ...
+    ]
+}
+```
+
+**7-day forecast at location**
+
+Example BOM API query showing `data` object structure: [https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily](https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily)    
+The `data` array is in chronological order where the zeroth object is 'now' and the final object is the future-most day we have a forecast for. The zeroth object is unique in that it has a `now` object containing (lackluster) present data.
+
+Less important elements redacted from example response.

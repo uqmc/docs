@@ -17,7 +17,7 @@ includes:
   - arapiles
   - girraween
   - grampians
-  - kp
+  - tibrogargan
 
 search: true
 
