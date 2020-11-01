@@ -446,9 +446,9 @@
 <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>gem <span class="nb">install </span>bundler
 <span class="nv">$ </span>bundle <span class="nb">install</span>
 </code></pre></div>
-<p>This documentation&#39;s source code is found in the <a href="https://github.com/uqmc/docs/">uqmc/docs</a> repository. The repository is a fork of <a href="https://github.com/slatedocs/slate/">Slate</a>. To edit its content, simply clone our &#39;docs&#39; repository and edit the markdown files under <code>source/</code>. The <code>index.html.md</code> file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the &#39;includes&#39; array. These includable files are located in <code>source/includes</code> and are appended to the main markdown file in the same order they are defined enumerated.</p>
+<p>This documentation&#39;s source code is found in the <a href="https://github.com/uqmc/docs/">uqmc/docs</a> repository. The repository is a fork of <a href="https://github.com/slatedocs/slate/">Slate</a>. To edit its content, simply clone our &#39;docs&#39; repository and edit the markdown files under <code>source/</code>. The <code>index.html.md</code> file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the &#39;includes&#39; array. These includable files are located in <code>source/includes</code> and are appended to the main markdown file in the same order they are enumerated in the index&#39;s frontmatter.</p>
 
-<p>There are also global variables defined at the bottom of <code>config.rb</code> which can be used within the markdown files. Items like domains subject to change and names of people should be defined here.</p>
+<p>There are also global variables defined in the <code>config.yml</code> which can be used within the markdown files. Items subject to change, such as domains and peoples&#39; names, should be defined here.</p>
 
 <p>The <a href="https://github.com/slatedocs/slate/wiki">Slate wiki</a> has heaps of resources on how to customise, run, and deploy the documentation.</p>
 
@@ -457,7 +457,7 @@
 <ul>
 <li><code>source/index.html.md</code><br></li>
 <li><code>source/includes/</code><br></li>
-<li><code>config.rb</code></li>
+<li><code>config.yml</code></li>
 </ul>
 <h3 id='development'>Development</h3>
 <blockquote>
@@ -476,8 +476,10 @@
 <span class="nv">$ </span>bash ./deploy.sh
 </code></pre></div>
 <p>In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the <code>main</code> branch, then use the <code>deploy.sh</code> file to push changes over to the <code>gh-pages</code> branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
+<h3 id='little-extra'>Little extra</h3>
+<p>If you are editing the docs with VSCode, you can hide all files besides those that you need to edit by adding <a href="https://gist.githubusercontent.com/vardy/3095f3c9a8e3e7d20201ca3bdbac8e59/raw/e3b230f7a922bb48bfac79af047e3d4d2863dbe1/hide_slate_files_glob.txt#">this glob</a> to the <code>files:excludes</code> setting.</p>
 <h1 id='executive-usage'>Executive Usage</h1><h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
-<p>In order to report issues with or get help with club tech, have a chat with: Jarred Vardy, or Sam Jane.</p>
+<p>In order to report issues with or get help with club tech, have a chat with: Jarred Vardy, or Same Jane.</p>
 <h2 id='how-to-sign-off-tapes'>How to sign off tapes</h2>
 <p><em>Coming soon.</em></p>
 <h2 id='how-to-add-events'>How to add events</h2>
@@ -691,6 +693,17 @@
 The <code>data</code> array is in chronological order where the zeroth object is &#39;now&#39; and the final object is the future-most day we have a forecast for. The zeroth object is unique in that it has a <code>now</code> object containing (lackluster) present data.</p>
 
 <p>Less important elements redacted from example response.</p>
+<aside class="success">
+This is a success message
+</aside>
+
+<aside class="warning">
+This is a warning message
+</aside>
+
+<aside class="notice">
+This is a notice message
+</aside>
 
       </div>
       <div class="dark-box">
