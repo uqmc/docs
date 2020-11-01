@@ -1,0 +1,13 @@
+# Global variables that can be used in the docs markdown
+# like so:
+#   <%= config[:variable_key] %>
+# Configured here like so:
+#   variable_key: some value!
+
+
+url_primary: https://uqmc.org/
+url_cms: https://cms.uqmc.org/admin/
+url_membership: https://members.uqmc.org/
+url_docs: https://docs.uqmc.org/
+
+tech_helpers: Jarred Vardy, or Same Jane

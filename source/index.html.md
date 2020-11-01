@@ -18,6 +18,7 @@ includes:
   - girraween
   - grampians
   - tibrogargan
+  - banners
 
 search: true
 

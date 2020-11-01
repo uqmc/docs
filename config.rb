@@ -1,4 +1,5 @@
 # Unique header generation
+require 'yaml'
 require './lib/unique_head.rb'
 
 # Markdown
@@ -62,14 +63,8 @@ helpers do
   require './lib/toc_data.rb'
 end
 
-# Global Variables
-set :tech_helpers, 'Jarred Vardy, or Sam Jane'
-config[:tech_helpers]
-set :url_primary, 'https://uqmc.org/'
-config[:url_primary]
-set :url_cms, 'https://cms.uqmc.org/admin/'
-config[:url_cms]
-set :url_membership, 'https://members.uqmc.org/'
-config[:url_membership]
-set :url_docs, 'https://docs.uqmc.org/'
-config[:url_docs]
+# Set custom configuration from config.yml
+custom_config = YAML.load_file('config.yml')
+custom_config.each do | key, value |
+  set key.to_sym, value
+end

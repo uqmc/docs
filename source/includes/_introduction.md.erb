@@ -18,9 +18,9 @@ $ gem install bundler
 $ bundle install
 ```
 
-This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the 'includes' array. These includable files are located in `source/includes` and are appended to the main markdown file in the same order they are defined enumerated.
+This documentation's source code is found in the [uqmc/docs](https://github.com/uqmc/docs/) repository. The repository is a fork of [Slate](https://github.com/slatedocs/slate/). To edit its content, simply clone our 'docs' repository and edit the markdown files under `source/`. The `index.html.md` file includes the front-matter for the markdown. Within the front-matter we define which other markdown files are included as part of the 'includes' array. These includable files are located in `source/includes` and are appended to the main markdown file in the same order they are enumerated in the index's frontmatter.
 
-There are also global variables defined at the bottom of `config.rb` which can be used within the markdown files. Items like domains subject to change and names of people should be defined here.
+There are also global variables defined in the `config.yml` which can be used within the markdown files. Items subject to change, such as domains and peoples' names, should be defined here.
 
 The [Slate wiki](https://github.com/slatedocs/slate/wiki) has heaps of resources on how to customise, run, and deploy the documentation.
 
@@ -28,7 +28,7 @@ To recap, the main files/directories you need to edit are:
 
  - `source/index.html.md`    
  - `source/includes/`    
- - `config.rb`
+ - `config.yml`
 
 ### Development
 
@@ -52,3 +52,7 @@ $ bash ./deploy.sh
 ```
 
 In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the `main` branch, then use the `deploy.sh` file to push changes over to the `gh-pages` branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).
+
+### Little extra
+
+If you are editing the docs with VSCode, you can hide all files besides those that you need to edit by adding [this glob](https://gist.githubusercontent.com/vardy/3095f3c9a8e3e7d20201ca3bdbac8e59/raw/e3b230f7a922bb48bfac79af047e3d4d2863dbe1/hide_slate_files_glob.txt#) to the `files:excludes` setting.
