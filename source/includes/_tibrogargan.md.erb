@@ -1,14 +1,6 @@
 # Tibrogargan
 
-## Tibrogargan tasks
-
-```
-[ ] Meta: start project
-```
-
-## Tibrogargan documentation
-
-### Resources
+## Resources
 
 Forecast data is sourced from the Australian Bureau of Meteorology (BOM) using [Tony Allan's](https://github.com/tonyallan) reverse-engineered BOM API library [weather-au])(https://github.com/tonyallan/weather-au). The BOM API is the least-documented pile of shit on the planet so Tony's doing God's work.
 
@@ -36,7 +28,7 @@ The search query finds any locations matching `kangaroo point`. The 7-day foreca
  - BOM historical data observations:    
  [http://www.bom.gov.au/catalogue/data-feeds.shtml](http://www.bom.gov.au/catalogue/data-feeds.shtml)
 
-### Endpoints
+## Endpoints
 
 > GET /api/forecast/:location_geohash
 
@@ -85,7 +77,7 @@ The search query finds any locations matching `kangaroo point`. The 7-day foreca
 }
 ```
 
-#### 7-day forecast at location
+### 7-day forecast at location
 
 Example BOM API query showing `data` object structure: [https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily](https://api.weather.bom.gov.au/v1/locations/r7hgdqt/forecasts/daily)    
 The `data` array is in chronological order where the zeroth object is 'now' and the final object is the future-most day we have a forecast for. The zeroth object is unique in that it has a `now` object containing (lackluster) present data.
