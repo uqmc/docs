@@ -467,9 +467,8 @@
 <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>git add <span class="nb">.</span>
 <span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"Make changes"</span>
 <span class="nv">$ </span>git push
-<span class="nv">$ </span>bash ./deploy.sh
 </code></pre></div>
-<p>In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the <code>main</code> branch, then use the <code>deploy.sh</code> file to push changes over to the <code>gh-pages</code> branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).</p>
+<p>In order to deploy your changes to production, simply run the commands on the right. Changes made on the <code>main</code> branch will automatically be built and moved to the <code>gh-pages</code> branch (through GitHub Actions). The <code>gh-pages</code> branch is where GitHub Pages looks for files to deploy publically.</p>
 <h3 id='little-extra'>Little extra</h3>
 <p>If you are editing the docs with VSCode, you can hide all files besides those that you need to edit by adding <a href="https://gist.githubusercontent.com/vardy/3095f3c9a8e3e7d20201ca3bdbac8e59/raw/e3b230f7a922bb48bfac79af047e3d4d2863dbe1/hide_slate_files_glob.txt#">this glob</a> to the <code>files:excludes</code> setting.</p>
 <h1 id='executive-usage'>Executive Usage</h1><h2 id='who-to-talk-to-about-club-tech'>Who to talk to about club tech</h2>
