@@ -48,10 +48,9 @@ This will spin up a local server at `http://localhost:4567/` that will automatic
 $ git add .
 $ git commit -m "Make changes"
 $ git push
-$ bash ./deploy.sh
 ```
 
-In order to deploy your changes to production, simply run the commands on the right. First make sure changes are in the `main` branch, then use the `deploy.sh` file to push changes over to the `gh-pages` branch where the live website looks for its content. You must have the requisite dependencies installed (Ruby, bundler, and dependencies).
+In order to deploy your changes to production, simply run the commands on the right. Changes made on the `main` branch will automatically be built and moved to the `gh-pages` branch (through GitHub Actions). The `gh-pages` branch is where GitHub Pages looks for files to deploy publically.
 
 ### Little extra
 
