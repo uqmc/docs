@@ -11,8 +11,8 @@ toc_footers:
 includes:
   - introduction
   - execs_usage
-  - projects
   - contributing
+  - projects
   - style
   - arapiles
   - girraween
