@@ -344,19 +344,10 @@
                   <li>
                     <a href="#tasks" class="toc-h2 toc-link" data-title="Tasks">Tasks</a>
                   </li>
-                  <li>
-                    <a href="#development-environment" class="toc-h2 toc-link" data-title="Development environment">Development environment</a>
-                  </li>
-                  <li>
-                    <a href="#styling" class="toc-h2 toc-link" data-title="Styling">Styling</a>
-                  </li>
-                  <li>
-                    <a href="#pushing-code-to-the-live-repository" class="toc-h2 toc-link" data-title="Pushing code to the live repository">Pushing code to the live repository</a>
-                  </li>
               </ul>
           </li>
           <li>
-            <a href="#projects" class="toc-h1 toc-link" data-title="Projects">Projects</a>
+            <a href="#architecture" class="toc-h1 toc-link" data-title="Architecture">Architecture</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#primary-frontend-codename-arapiles" class="toc-h2 toc-link" data-title="Primary frontend (codename: Arapiles)">Primary frontend (codename: Arapiles)</a>
@@ -368,7 +359,7 @@
                     <a href="#cms-backend-plugin-codename-grampians" class="toc-h2 toc-link" data-title="CMS / backend plugin (codename: Grampians)">CMS / backend plugin (codename: Grampians)</a>
                   </li>
                   <li>
-                    <a href="#rain-forecaster-codename-kp" class="toc-h2 toc-link" data-title="Rain forecaster (codename: KP)">Rain forecaster (codename: KP)</a>
+                    <a href="#rain-forecaster-codename-tibrogargan" class="toc-h2 toc-link" data-title="Rain forecaster (codename: Tibrogargan)">Rain forecaster (codename: Tibrogargan)</a>
                   </li>
               </ul>
           </li>
@@ -485,32 +476,19 @@
 <h2 id='how-to-send-emails'>How to send emails</h2>
 <p><em>Coming soon.</em></p>
 <h1 id='contributing'>Contributing</h1>
-<p>Contributing to the code-base may be a bit daunting at first. This documentation will seek to be as descriptive as possible without re-inventing the wheel. Google is our best friend here!</p>
+<p>Contributing to the codebase may be a bit daunting at first. This documentation will seek to be as descriptive as possible without re-inventing the wheel. Google is our best friend here!</p>
 
-<p>This contributing section is targetted towards members of the community looking to help out who do not have administrative privledges in the GitHub organisation.</p>
+<p>To contribute please familiarise yourself with <a href="https://youtu.be/hwP7WQkmECE">Git</a> and check out the <a href="#">GitHub organisation</a> for all of the projects&#39; source code.</p>
+
+<p>Details for each project can be found in their respective documentation section and an overview of our architecture and each project can be found in the <a href="#architecture">architecture section</a>. For more information please message the exec currently in charge of maintaining club technology.</p>
 <h2 id='tasks'>Tasks</h2>
 <p>To-do items can be found on the <a href="https://trello.com/b/QPybrlHj/uqmc">Trello board</a>.</p>
 
 <p><img src="https://i.imgur.com/bxE8vjU.png" alt="Kanban Trello board" /></p>
-<h2 id='development-environment'>Development environment</h2><h2 id='styling'>Styling</h2>
-<p>For some guidance on how you should be styling your code and git commits, check out the <a href="#style">style section</a>.</p>
-<h2 id='pushing-code-to-the-live-repository'>Pushing code to the live repository</h2><h3 id='text-guide'>Text guide</h3>
-<ul>
-<li><a href="https://reflectoring.io/github-fork-and-pull/">https://reflectoring.io/github-fork-and-pull/</a></li>
-</ul>
-<h3 id='video-guide'>Video guide</h3>
-<p><centering>
-<iframe width="420" height="315"
-    src="https://www.youtube.com/embed/G1I3HF4YWEw"
-    style="display: block; margin: 0 auto;"
-    allowfullscreen="allowfullscreen"
-    mozallowfullscreen="mozallowfullscreen" 
-    msallowfullscreen="msallowfullscreen" 
-    oallowfullscreen="oallowfullscreen" 
-    webkitallowfullscreen="webkitallowfullscreen">
-</iframe>
-</centering></p>
-<h1 id='projects'>Projects</h1><h2 id='primary-frontend-codename-arapiles'>Primary frontend (codename: Arapiles)</h2>
+<h1 id='architecture'>Architecture</h1>
+<p><em>UQMC Home-Brew Service Architecture</em>
+<img src="https://i.imgur.com/HIyCW0q.png" alt="Architectural diagram" /></p>
+<h2 id='primary-frontend-codename-arapiles'>Primary frontend (codename: Arapiles)</h2>
 <p>Arapiles is the front-end server for <code>uqmc.org</code>. Its purpose is to provide content, display copy, and update users on the goings-on for the club. It is serviced by the custom backend Girraween and the Strapi backend (with Grampians custom plugin) to provide functionality.</p>
 
 <p>Users are also expected to go here in order to learn about the requirements to obtain <em>tapes</em>. </p>
@@ -524,12 +502,12 @@
 <p>The CMS we use is an instance of the open-source Strapi project. Grampians is a plugin to provide extra functionality to Strapi. Such functionality includes API endpoints for sending emails, accessing CMS data in a more custom way, scheduling cron-jobs and more. </p>
 
 <p><a href="#grampians">Grampians docs</a>    </p>
-<h2 id='rain-forecaster-codename-kp'>Rain forecaster (codename: KP)</h2>
+<h2 id='rain-forecaster-codename-tibrogargan'>Rain forecaster (codename: Tibrogargan)</h2>
 <p>A simple service which will return rain forecast data for given dates from the BOM. The intention is to be used in compliment with events scheduling and visualisation in order to get an idea of rain probability without seeking out the data manually.</p>
 
 <p>Perhaps we can also have weather alerts setup for execs when predictions change past a threshold.</p>
 
-<p><a href="#kp">KP docs</a>    </p>
+<p><a href="#tibrogargan">Tibrogargan docs</a>    </p>
 <h1 id='style'>Style</h1>
 <p><em>Style guide coming soon.</em></p>
 <h1 id='arapiles'>Arapiles</h1><h2 id='resources'>Resources</h2>
