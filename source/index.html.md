@@ -12,7 +12,7 @@ includes:
   - introduction
   - execs_usage
   - contributing
-  - projects
+  - architecture
   - style
   - arapiles
   - girraween
